@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from './context/ThemeContext';
 
@@ -23,7 +23,7 @@ function App() {
   return (
     <HelmetProvider>
       <ThemeProvider>
-        <HashRouter>
+        <BrowserRouter>
           <Suspense fallback={<Loading />}>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -36,7 +36,7 @@ function App() {
               <Route path="*" element={<Navigate to="/404" replace />} />
             </Routes>
           </Suspense>
-        </HashRouter>
+        </BrowserRouter>
       </ThemeProvider>
     </HelmetProvider>
   );

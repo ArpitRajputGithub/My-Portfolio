@@ -19,13 +19,11 @@ export const BlogPost = ({ title, date, readTime, content, slug }: BlogPostProps
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
       className="bg-white dark:bg-secondary-800 rounded-lg shadow-lg overflow-hidden"
-      id={`post-${slug}`}
     >
       <div className="p-6">
         <Link
           to="/blog"
           className="inline-flex items-center text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors mb-6"
-          aria-label={`Back to blog from ${slug}`}
         >
           <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />

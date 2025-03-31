@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "homepage": "https://arpitrajputgithub.github.io/My-Portfolio/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -13,8 +12,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist --force",
-    "deploy:aws": "node deploy-aws.js",
+    "deploy": "node deploy-aws.js",
     "deploy:s3": "aws s3 sync dist/ s3://$S3_BUCKET_NAME --delete",
     "deploy:cloudfront": "aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths \"/*\""
   },

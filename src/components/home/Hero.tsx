@@ -93,7 +93,7 @@ export const Hero = () => {
               >
                 <AiOutlineTwitter size={24} />
               </a>
-            </div>
+              </div>
           </motion.div>
 
           {/* Image */}
@@ -162,7 +162,7 @@ export const Hero = () => {
                       delay: 0.5
                     }}
                   />
-                </div>
+              </div>
               </div>
             </div>
           </motion.div>
