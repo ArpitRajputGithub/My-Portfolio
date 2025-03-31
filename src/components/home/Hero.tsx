@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from 'react-icons/ai';
 import { TypeAnimation } from 'react-type-animation';
-import heroImage from '../../assets/hero-image.jpg';
 
 export const Hero = () => {
   return (
@@ -94,26 +93,76 @@ export const Hero = () => {
               >
                 <AiOutlineTwitter size={24} />
               </a>
-            </div>
+              </div>
           </motion.div>
 
           {/* Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
             className="relative"
           >
-            <div className="relative w-full max-w-md mx-auto">
-              <div className="absolute -inset-2 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 dark:from-primary-400 dark:to-accent-400 opacity-75 blur-md"></div>
-              <div className="relative">
-                <img
-                  src={heroImage}
-                  alt="Arpit Rajput"
-                  className="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-white dark:border-secondary-800 shadow-xl"
-                />
-                <div className="absolute top-0 right-0 -mr-4 -mt-4 w-24 h-24 bg-accent-500 rounded-full blur-xl opacity-80 animate-pulse"></div>
-                <div className="absolute bottom-0 left-0 -ml-4 -mb-4 w-20 h-20 bg-primary-500 rounded-full blur-xl opacity-80 animate-pulse delay-700"></div>
+            <div className="relative max-w-md mx-auto">
+              {/* Animated gradient background */}
+              <div className="absolute -inset-4 rounded-full bg-gradient-to-r from-primary-500 via-accent-500 to-secondary-400 dark:from-primary-400 dark:via-accent-400 dark:to-secondary-300 opacity-80 blur-xl animate-gradient"></div>
+              
+              {/* Pulsing circle animations */}
+              <motion.div 
+                className="absolute -inset-6 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 opacity-30 blur-2xl z-0"
+                animate={{ 
+                  scale: [1, 1.05, 1],
+                  opacity: [0.3, 0.2, 0.3] 
+                }}
+                transition={{ 
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut" 
+                }}
+              />
+              
+              {/* Inner glowing ring */}
+              <div className="relative z-10 rounded-full p-1 bg-gradient-to-r from-primary-400 via-accent-400 to-secondary-400 shadow-xl">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-500 via-accent-500 to-secondary-500 blur-md opacity-75"></div>
+                
+                {/* Image container */}
+                <div className="relative rounded-full bg-white dark:bg-secondary-900 p-2">
+                  <img
+                    src="/src/assets/hero-image.jpg"
+                    alt="Arpit Rajput"
+                    className="rounded-full w-72 h-72 md:w-96 md:h-96 object-cover shadow-2xl"
+                  />
+                
+                  {/* Floating accent elements */}
+                  <motion.div 
+                    className="absolute top-0 right-0 -mr-6 -mt-6 w-28 h-28 bg-accent-500 rounded-full blur-xl opacity-60 z-0"
+                    animate={{ 
+                      y: [0, -8, 0],
+                      x: [0, 5, 0],
+                      scale: [1, 1.1, 1] 
+                    }}
+                    transition={{ 
+                      duration: 5,
+                      repeat: Infinity,
+                      ease: "easeInOut" 
+                    }}
+                  />
+                  
+                  <motion.div 
+                    className="absolute bottom-0 left-0 -ml-6 -mb-6 w-24 h-24 bg-primary-500 rounded-full blur-xl opacity-60 z-0"
+                    animate={{ 
+                      y: [0, 8, 0],
+                      x: [0, -5, 0],
+                      scale: [1, 1.15, 1] 
+                    }}
+                    transition={{ 
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: 0.5
+                    }}
+                  />
+              </div>
               </div>
             </div>
           </motion.div>
