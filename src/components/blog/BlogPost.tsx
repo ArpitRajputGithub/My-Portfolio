@@ -9,7 +9,7 @@ interface BlogPostProps {
   slug: string;
 }
 
-export const BlogPost = ({ title, date, readTime, content, slug }: BlogPostProps) => {
+export const BlogPost = ({ title, date, readTime, content}: BlogPostProps) => {
   // Split content into sections based on numbered headings
   const sections = content.split(/(?=\d+\.)/).map(section => section.trim());
 

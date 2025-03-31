@@ -12,6 +12,10 @@ A responsive personal portfolio website built with React, Vite, and Tailwind CSS
 - 🔍 SEO-friendly with react-helmet-async
 - 🚀 Optimized for performance
 
+## Live Demo
+
+Visit the live portfolio site: [https://arpitrajputgithub.github.io/My-Portfolio/](https://arpitrajputgithub.github.io/My-Portfolio/)
+
 ## Tech Stack
 
 - React (with TypeScript)
