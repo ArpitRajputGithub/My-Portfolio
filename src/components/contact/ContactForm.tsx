@@ -200,6 +200,11 @@ export const ContactForm = () => {
           {formError && (
             <div className="mb-6 bg-red-100 dark:bg-red-900/30 text-red-800 dark:text-red-300 p-4 rounded-lg">
               {formError}
+              {formError.includes('EmailJS configuration is missing') && (
+                <div className="mt-2">
+                  <p>Please contact me directly at: <a href="mailto:arpit.rajput0926@gmail.com" className="underline hover:text-primary-600 dark:hover:text-primary-400">arpit.rajput0926@gmail.com</a></p>
+                </div>
+              )}
             </div>
           )}
           
