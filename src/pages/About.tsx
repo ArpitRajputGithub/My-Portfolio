@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Layout } from '../components/layout/Layout';
 import { Section } from '../components/ui/Section';
 import { FiCode, FiServer, FiDatabase, FiTool, FiAward } from 'react-icons/fi';
-import mePhoto from '../assets/me.jpg';
+import mePhoto from '../assets/hero-image.jpg';
 
 export const About = () => {
   // Animation variants
