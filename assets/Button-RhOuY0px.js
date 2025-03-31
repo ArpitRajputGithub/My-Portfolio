@@ -1,0 +1,7 @@
+import{j as t}from"./ui-BqpGMHYh.js";import{L as g}from"./vendor-Dpl_zufG.js";const N=({variant:m="primary",size:x="md",className:u="",children:p,isLoading:n=!1,disabled:l=!1,as:c="button",...o})=>{const b={primary:"btn-primary",secondary:"btn-secondary",outline:"btn-outline"},f={sm:"text-sm px-4 py-2",md:"text-base px-5 py-2.5",lg:"text-lg px-6 py-3"},r=`
+    inline-flex items-center justify-center font-medium rounded-lg transition-all
+    ${b[m]}
+    ${f[x]}
+    ${n||l?"opacity-70 cursor-not-allowed":""}
+    ${u}
+  `.trim(),h=()=>t.jsxs("svg",{className:"animate-spin -ml-1 mr-2 h-4 w-4 text-current",xmlns:"http://www.w3.org/2000/svg",fill:"none",viewBox:"0 0 24 24",children:[t.jsx("circle",{className:"opacity-25",cx:"12",cy:"12",r:"10",stroke:"currentColor",strokeWidth:"4"}),t.jsx("path",{className:"opacity-75",fill:"currentColor",d:"M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"})]}),a=()=>t.jsxs(t.Fragment,{children:[n&&t.jsx(h,{}),p]});if(c==="a"){const{to:d,disabled:i,isLoading:s,...e}=o;return t.jsx("a",{className:r,...e,"aria-disabled":s||i,tabIndex:s||i?-1:void 0,children:t.jsx(a,{})})}if(c==="routerLink"){const{to:d,href:i,disabled:s,isLoading:e,...y}=o;return t.jsx(g,{className:r,to:d,...y,"aria-disabled":e||s,tabIndex:e||s?-1:void 0,children:t.jsx(a,{})})}const{href:w,to:C,...j}=o;return t.jsx("button",{className:r,disabled:n||l,...j,children:t.jsx(a,{})})};export{N as B};
