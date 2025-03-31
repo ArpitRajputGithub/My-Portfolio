@@ -6,7 +6,7 @@
   "homepage": "https://ArpitRajputGithub.github.io/My-Portfolio/",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && node vite-assets-fix.js",
     "lint": "eslint .",
     "preview": "vite preview",
     "analyze": "vite build --mode analyze",
