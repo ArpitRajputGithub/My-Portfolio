@@ -1,4 +1,4 @@
-import{j as t,L as g}from"./index-Cu7ANnHL.js";const L=({variant:x="primary",size:m="md",className:u="",children:p,isLoading:n=!1,disabled:l=!1,as:c="button",...a})=>{const b={primary:"btn-primary",secondary:"btn-secondary",outline:"btn-outline"},h={sm:"text-sm px-4 py-2",md:"text-base px-5 py-2.5",lg:"text-lg px-6 py-3"},o=`
+import{j as t,L as g}from"./index-CfChF-8X.js";const L=({variant:x="primary",size:m="md",className:u="",children:p,isLoading:n=!1,disabled:l=!1,as:c="button",...a})=>{const b={primary:"btn-primary",secondary:"btn-secondary",outline:"btn-outline"},h={sm:"text-sm px-4 py-2",md:"text-base px-5 py-2.5",lg:"text-lg px-6 py-3"},o=`
     inline-flex items-center justify-center font-medium rounded-lg transition-all
     ${b[x]}
     ${h[m]}
