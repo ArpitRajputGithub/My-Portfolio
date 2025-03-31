@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { AiFillGithub, AiFillLinkedin, AiOutlineTwitter } from 'react-icons/ai';
 import { TypeAnimation } from 'react-type-animation';
-import heroImage from '../../assets/hero-image.jpg';
 
 export const Hero = () => {
   return (
@@ -129,9 +128,9 @@ export const Hero = () => {
                 {/* Image container */}
                 <div className="relative rounded-full bg-white dark:bg-secondary-900 p-2">
                   <img
-                    src={heroImage} 
+                    src="/src/assets/hero-image.jpg"
                     alt="Arpit Rajput"
-                    className="rounded-full w-80 h-80 md:w-[28rem] md:h-[28rem] object-cover shadow-2xl"
+                    className="rounded-full w-72 h-72 md:w-96 md:h-96 object-cover shadow-2xl"
                   />
                 
                   {/* Floating accent elements */}

@@ -1,4 +1,4 @@
-import { useState, FormEvent } from 'react';
+import { useState, FormEvent, useEffect } from 'react';
 import { Button } from '../ui/Button';
 import emailjs from 'emailjs-com';
 
@@ -31,6 +31,14 @@ export const ContactForm = () => {
   const [formErrors, setFormErrors] = useState<FormErrors>({});
   const [formSuccess, setFormSuccess] = useState(false);
   const [formError, setFormError] = useState('');
+  
+  // Initialize EmailJS
+  useEffect(() => {
+    const userId = import.meta.env.VITE_EMAILJS_USER_ID;
+    if (userId) {
+      emailjs.init(userId);
+    }
+  }, []);
   
   // Handle input changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -97,18 +105,24 @@ export const ContactForm = () => {
     
     try {
       // EmailJS configuration from environment variables
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const userId = import.meta.env.VITE_EMAILJS_USER_ID;
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_bw90ztd';
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_n12abqw';
+      const userId = import.meta.env.VITE_EMAILJS_USER_ID || 'YRNwdkhFIuiMXuGjd';
       
       console.log('EmailJS config check:', {
         serviceIdExists: !!serviceId,
         templateIdExists: !!templateId,
-        userIdExists: !!userId
+        userIdExists: !!userId,
+        serviceId,
+        templateId,
+        userId: userId ? userId.slice(0, 3) + '...' : undefined // Log partial ID for security
       });
       
-      if (!serviceId || !templateId || !userId) {
-        throw new Error('EmailJS configuration is missing. Please check your environment variables.');
+      // Always try to initialize EmailJS before sending
+      try {
+        emailjs.init(userId);
+      } catch (initError) {
+        console.warn("EmailJS already initialized or initialization failed", initError);
       }
       
       // Send email
@@ -202,7 +216,7 @@ export const ContactForm = () => {
               {formError}
               {formError.includes('EmailJS configuration is missing') && (
                 <div className="mt-2">
-                  <p>Please contact me directly at: <a href="mailto:arpit.rajput0926@gmail.com" className="underline hover:text-primary-600 dark:hover:text-primary-400">arpit.rajput0926@gmail.com</a></p>
+                  <p>Please contact me directly at: <a href="mailto:work.arpitrajput@gmail.com" className="underline hover:text-primary-600 dark:hover:text-primary-400">work.arpitrajput@gmail.com</a></p>
                 </div>
               )}
             </div>
